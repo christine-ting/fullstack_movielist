@@ -34,7 +34,7 @@ const models = {
   put: (director_name, callback) => {
     const queryStr = `SELECT movies.id, movies.movie_name, directors.director_name \
                       FROM movies INNER JOIN directors ON movies.director = directors.id \
-                      AND directors.director_name = "${director_name}";`
+                      AND directors.director_name = "${director_name}";`;
     db.query(queryStr, (err, results) => {
       callback(err, results);
     });
