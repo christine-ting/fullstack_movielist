@@ -2,7 +2,7 @@ const db = require('./');
 
 const models = {
   get: (callback) => {
-    const queryStr = 'SELECT movies.id, movies.movie_name, directors.director_name \
+    const queryStr = 'SELECT movies.id, movie_name, directors.director_name \
                       FROM movies INNER JOIN directors ON movies.director = directors.id';
     db.query(queryStr, (err, results) => {
       callback(err, results);
@@ -32,7 +32,7 @@ const models = {
     });
   },
   put: (director_name, callback) => {
-    const queryStr = `SELECT movies.id, movies.movie_name, directors.director_name \
+    const queryStr = `SELECT movies.id, movie_name, directors.director_name \
                       FROM movies INNER JOIN directors ON movies.director = directors.id \
                       AND directors.director_name = "${director_name}";`;
     db.query(queryStr, (err, results) => {
