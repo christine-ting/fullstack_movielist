@@ -85,10 +85,10 @@ class App extends React.Component {
         <h1>Movie List</h1>
         <h3>Add New Movie</h3>
         <form onSubmit={this.submitHandler}>
-          <label>
-            Movie Name: <input type="text" name="movie_name" onChange={this.changeHandler}/>
-            Director Name: <input type="text" name="director_name" onChange={this.changeHandler}/>
-          </label>
+          <label>Movie Name: </label>
+          <input type="text" name="movie_name" onChange={this.changeHandler}/>
+          <label>Director Name: </label>
+          <input type="text" name="director_name" onChange={this.changeHandler}/>
           <input type="submit" value="add"/>
         </form>
         <div>
