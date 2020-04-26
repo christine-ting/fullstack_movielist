@@ -4,7 +4,7 @@ const controller = {
   get: (req, res) => {
     models.get((err, results) => {
       if (err) {
-        res.status(200).send(err);
+        res.status(400).send(err);
 
       } else {
         res.status(200).send(results);
@@ -14,8 +14,7 @@ const controller = {
   getDirectors: (req, res) => {
     models.getDirectors((err, results) => {
       if (err) {
-        res.status(200).send(err);
-
+        res.status(400).send(err);
       } else {
         res.status(200).send(results);
       }
@@ -36,7 +35,7 @@ const controller = {
     const id = req.params.id;
     models.delete(id, (err, results) => {
       if (err) {
-        res.status(202).send(err);
+        res.status(402).send(err);
 
       } else {
         res.status(202).send('movie deleted');
@@ -47,7 +46,7 @@ const controller = {
     const { director_name } = req.body;
     models.put(director_name, (err, results) => {
       if (err) {
-        res.status(203).send(err);
+        res.status(403).send(err);
 
       } else {
         res.status(203).send(results);
